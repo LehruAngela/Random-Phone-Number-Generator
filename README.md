@@ -1,4 +1,5 @@
 # random-phone-number-generator
+[![Coverage Status](https://coveralls.io/repos/github/LehruAngela/random-phone-number-generator/badge.svg?branch=number-generator)](https://coveralls.io/github/LehruAngela/random-phone-number-generator?branch=number-generator)
 
 ## Project setup
 ```
