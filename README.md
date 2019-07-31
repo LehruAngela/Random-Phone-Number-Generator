@@ -1,6 +1,8 @@
 # random-phone-number-generator
 [![Coverage Status](https://coveralls.io/repos/github/LehruAngela/random-phone-number-generator/badge.svg?branch=number-generator)](https://coveralls.io/github/LehruAngela/random-phone-number-generator?branch=number-generator)
 
+[![Build Status](https://travis-ci.org/LehruAngela/random-phone-number-generator.svg?branch=number-generator)](https://travis-ci.org/LehruAngela/random-phone-number-generator)
+
 ## Project setup
 ```
 npm install
