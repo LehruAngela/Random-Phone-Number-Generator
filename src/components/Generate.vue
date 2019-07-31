@@ -63,7 +63,17 @@ export default {
       const min = '000000001';
       const max = '999999999';
       const maxNumbers = 10000;
-      for (let i = 0; i < this.range; i++) { // no plus plus error from linting, need to fix
+      if (maxNumbers > 0) {
+        this.$notify({
+          group: 'alert',
+          title: 'Limit exceeded',
+          type: 'error',
+          text: 'Input a number within the 10000 range',
+        });
+        return;
+      }
+      for (let i = 0; i < this.range; i++) {
+        // no plus plus error from linting, need to fix
         const number = Math.floor(
           Math.random() * (Number(max) - Number(min) + 1) + Number(min),
         ).toString();
@@ -73,7 +83,12 @@ export default {
       const remain = maxNumbers - this.numbers.length;
       this.numbersLeft = remain;
       if (remain < 0) {
-        // error message to be displayed
+        this.$notify({
+          group: 'alert',
+          title: 'Limit exceeded',
+          type: 'error',
+          text: 'You have reached the 10000 limit of phone numbers generated',
+        });
       }
     },
     sortNumbers(value) {
@@ -105,10 +120,10 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Darker+Grotesque&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Darker+Grotesque&display=swap");
 
 body {
-  font-family: 'Darker Grotesque', sans-serif;
+  font-family: "Darker Grotesque", sans-serif;
 }
 .funcs {
   background-color: aliceblue;
@@ -126,11 +141,11 @@ body {
   background-color: rgb(81, 216, 216);
   padding: 0.5em;
   border-radius: 0.2em;
-  font-family: 'Darker Grotesque', sans-serif;
+  font-family: "Darker Grotesque", sans-serif;
   font-weight: bold;
   letter-spacing: 0.1em;
 }
-.stats{
+.stats {
   position: fixed;
   top: 0;
   padding: 10px 16px;
@@ -138,21 +153,21 @@ body {
   color: #f1f1f1;
   width: 70%;
 }
-.numberList{
+.numberList {
   padding: 3em 0;
   text-align: left;
 }
-.generatedNumbers{
+.generatedNumbers {
   padding-bottom: 1.5em;
 }
-.number{
+.number {
   padding: 0.3em;
 }
-hr{
+hr {
   margin: 0.5em 0;
   border: 0.5px solid #cccccc;
 }
-.indexNumber{
+.indexNumber {
   margin-right: 1em;
 }
 </style>
