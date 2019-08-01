@@ -34,4 +34,11 @@ describe('Generate.vue', () => {
     wrapper.vm.sortNumbers('Descending');
     expect(wrapper.vm.numbers).toEqual(['0999999999', '0987654321', '0123456789', '0000000000']);
   });
+
+  it('correctly returns an error message when the 10000 limit is exceeded', () => {
+    wrapper.vm.numbers = [];
+    wrapper.vm.range = 20000;
+    wrapper.vm.generateNumbers();
+    expect(wrapper.vm.numbers.length).toEqual(0);
+  });
 });

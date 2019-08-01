@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1564674699606" clover="3.2.0">
+  <project timestamp="1564674699607" name="All files">
+    <metrics statements="29" coveredstatements="28" conditionals="12" coveredconditionals="11" methods="2" coveredmethods="2" elements="43" coveredelements="41" complexity="0" loc="29" ncloc="29" packages="1" files="1" classes="1">
+      <file name="Generate.vue" path="/Users/angela/Dev/random-phone-number-generator/src/components/Generate.vue">
+        <metrics statements="29" coveredstatements="28" conditionals="12" coveredconditionals="11" methods="2" coveredmethods="2"/>
+        <line num="51" count="1" type="stmt"/>
+        <line num="55" count="3" type="stmt"/>
+        <line num="64" count="2" type="stmt"/>
+        <line num="68" count="2" type="stmt"/>
+        <line num="69" count="2" type="stmt"/>
+        <line num="70" count="2" type="stmt"/>
+        <line num="71" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="72" count="1" type="stmt"/>
+        <line num="73" count="1" type="stmt"/>
+        <line num="75" count="1" type="stmt"/>
+        <line num="76" count="10" type="stmt"/>
+        <line num="79" count="10" type="stmt"/>
+        <line num="80" count="10" type="stmt"/>
+        <line num="82" count="1" type="stmt"/>
+        <line num="83" count="1" type="stmt"/>
+        <line num="84" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="85" count="0" type="stmt"/>
+        <line num="89" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="90" count="7" type="stmt"/>
+        <line num="92" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="93" count="5" type="stmt"/>
+        <line num="99" count="17" type="cond" truecount="2" falsecount="0"/>
+        <line num="100" count="3" type="stmt"/>
+        <line num="102" count="14" type="stmt"/>
+        <line num="103" count="14" type="stmt"/>
+        <line num="106" count="17" type="cond" truecount="2" falsecount="0"/>
+        <line num="107" count="3" type="stmt"/>
+        <line num="109" count="14" type="stmt"/>
+        <line num="110" count="14" type="stmt"/>
+      </file>
+    </metrics>
+  </project>
+</coverage>

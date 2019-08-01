@@ -48,6 +48,8 @@
 </template>
 
 <script>
+import swal from 'sweetalert';
+
 export default {
   data() {
     return {
@@ -55,6 +57,7 @@ export default {
       range: '',
       numbersLeft: '',
       items: ['Ascending', 'Descending'],
+      message: '',
     };
   },
   mounted() {
@@ -65,8 +68,8 @@ export default {
       const min = '000000001';
       const max = '999999999';
       const maxNumbers = 10000;
-      if (maxNumbers > 10000) {
-        alert('Limit exceeded', 'Input a number within the 10000 range');
+      if (this.range > 10000) {
+        swal('Limit exceeded', 'Input a number within the 10000 range', 'error');
         return;
       }
       for (let i = 0; i < this.range; i++) {
@@ -79,7 +82,7 @@ export default {
       const remain = maxNumbers - this.numbers.length;
       this.numbersLeft = remain;
       if (remain < 0) {
-        alert('Limit exceeded', 'Input a number within the 10000 range');
+        swal('Limit exceeded', 'Input a number within the 10000 range', 'error');
       }
     },
     sortNumbers(value) {
