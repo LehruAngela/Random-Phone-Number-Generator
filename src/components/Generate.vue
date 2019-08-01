@@ -2,31 +2,33 @@
   <div>
     <div class="row">
       <div class="col-3 funcs">
-        <div class="generateNumbers">
-          <div>
-            <p>You have {{ numbersLeft }} numbers left</p>
-            <v-text-field
-              v-model="range"
-              label="How many numbers?"
-              required>
-            </v-text-field>
+        <div class="inner-funcs">
+          <div class="generateNumbers">
+            <div>
+              <p>You have {{ numbersLeft }} numbers left</p>
+              <v-text-field
+                v-model="range"
+                label="How many numbers?"
+                required>
+              </v-text-field>
+            </div>
+            <div>
+              <button class="generateBtn" @click="generateNumbers">Generate Numbers</button>
+            </div>
+          </div>
+          <div class="generatedNumbers">
+            Generated numbers:
+            {{ this.numbers.length }}
           </div>
           <div>
-            <button class="generateBtn" @click="generateNumbers">Generate Numbers</button>
+            <p>Choose your sorting option</p>
+            <v-select
+              :items="items"
+              label="Sort option"
+              @change="sortNumbers"
+              outlined>
+            </v-select>
           </div>
-        </div>
-        <div class="generatedNumbers">
-          Generated numbers:
-          {{ this.numbers.length }}
-        </div>
-        <div>
-          <p>Choose your sorting option</p>
-          <v-select
-            :items="items"
-            label="Sort option"
-            @change="sortNumbers"
-            outlined>
-          </v-select>
         </div>
       </div>
       <div class="col numbers">
@@ -63,17 +65,11 @@ export default {
       const min = '000000001';
       const max = '999999999';
       const maxNumbers = 10000;
-      if (maxNumbers > 0) {
-        this.$notify({
-          group: 'alert',
-          title: 'Limit exceeded',
-          type: 'error',
-          text: 'Input a number within the 10000 range',
-        });
+      if (maxNumbers > 10000) {
+        alert('Limit exceeded', 'Input a number within the 10000 range');
         return;
       }
       for (let i = 0; i < this.range; i++) {
-        // no plus plus error from linting, need to fix
         const number = Math.floor(
           Math.random() * (Number(max) - Number(min) + 1) + Number(min),
         ).toString();
@@ -83,12 +79,7 @@ export default {
       const remain = maxNumbers - this.numbers.length;
       this.numbersLeft = remain;
       if (remain < 0) {
-        this.$notify({
-          group: 'alert',
-          title: 'Limit exceeded',
-          type: 'error',
-          text: 'You have reached the 10000 limit of phone numbers generated',
-        });
+        alert('Limit exceeded', 'Input a number within the 10000 range');
       }
     },
     sortNumbers(value) {
@@ -128,6 +119,9 @@ body {
 .funcs {
   background-color: aliceblue;
   height: 100vh;
+}
+.inner-funcs {
+  padding-left: 0.6em;
 }
 .numbers {
   height: 100vh;
