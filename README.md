@@ -2,7 +2,8 @@
 [![Build Status](https://travis-ci.org/LehruAngela/random-phone-number-generator.svg?branch=number-generator)](https://travis-ci.org/LehruAngela/random-phone-number-generator)
 [![Coverage Status](https://coveralls.io/repos/github/LehruAngela/random-phone-number-generator/badge.svg?branch=number-generator)](https://coveralls.io/github/LehruAngela/random-phone-number-generator?branch=number-generator)
 
-
+This Project is written in VueJS. It enables users generate random 10 digit phone numbers that start with "0". 
+Only 10,000 numbers can be generated at a time. 
 
 ## Project setup
 ```
